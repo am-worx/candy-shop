@@ -1,0 +1,28 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'tsc:w' ]
+2 info using npm@3.3.12
+3 info using node@v5.3.0
+4 verbose run-script [ 'pretsc:w', 'tsc:w', 'posttsc:w' ]
+5 info lifecycle angular2-quickstart@1.0.0~pretsc:w: angular2-quickstart@1.0.0
+6 silly lifecycle angular2-quickstart@1.0.0~pretsc:w: no script for pretsc:w, continuing
+7 info lifecycle angular2-quickstart@1.0.0~tsc:w: angular2-quickstart@1.0.0
+8 verbose lifecycle angular2-quickstart@1.0.0~tsc:w: unsafe-perm in lifecycle true
+9 verbose lifecycle angular2-quickstart@1.0.0~tsc:w: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/am-worx/Desktop/api-lab/front/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/am-worx/Desktop/api-lab/front/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
+10 verbose lifecycle angular2-quickstart@1.0.0~tsc:w: CWD: /Users/am-worx/Desktop/api-lab/front
+11 silly lifecycle angular2-quickstart@1.0.0~tsc:w: Args: [ '-c', 'tsc -w' ]
+12 verbose stack Error: write EPIPE
+12 verbose stack     at Object.exports._errnoException (util.js:855:11)
+12 verbose stack     at exports._exceptionWithHostPort (util.js:878:20)
+12 verbose stack     at WriteWrap.afterWrite (net.js:763:14)
+13 verbose cwd /Users/am-worx/Desktop/api-lab/front
+14 error Darwin 15.2.0
+15 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "tsc:w"
+16 error node v5.3.0
+17 error npm  v3.3.12
+18 error code EPIPE
+19 error errno EPIPE
+20 error syscall write
+21 error write EPIPE
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]
