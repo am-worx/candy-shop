@@ -4,6 +4,7 @@ var http = require('http'),
 	express = require('express'),
 	mongoose = require('mongoose'),
 	net = require('net'),
+	models = require('./models'),
 	routes = require('./routes');
 
 var rootDir = '/Users/am-worx/Desktop/candy-shop/';

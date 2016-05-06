@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+
 var schema = mongoose.Schema({
 	firstName: { type: String, trim: true },
 	lastName: { type: String, trim: true },

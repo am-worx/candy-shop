@@ -1,0 +1,1 @@
+exports.CandyProfile = require('./candyprofile');
