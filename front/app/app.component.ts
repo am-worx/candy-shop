@@ -5,7 +5,8 @@ import { HTTP_PROVIDERS } from 'angular2/http';
 import { HeroService } from './hero.service';
 import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent } from './heroes.component';
-import { CandyProfileComponent } from './candy-profile.component.ts';
+import { CandyProfileComponent } from './candy-profile.component';
+import { NewCandyComponent } from './new-candy.component';
 
 @Component({
 	selector: 'my-app',
@@ -15,7 +16,8 @@ import { CandyProfileComponent } from './candy-profile.component.ts';
       <a [routerLink]="['Dashboard']">Dashboard</a><br>
       <a href="dashboard">Dashboard url</a><br>
       <a [routerLink]="['Heroes']">Heroes</a><br>
-      <a href="heroes">Heroes url</a>
+      <a href="heroes">Heroes url</a><br>
+      <a [routerLink]="['Newcandy']">New Candy</a>
     </nav>
     <router-outlet></router-outlet>
   `,
@@ -43,6 +45,11 @@ import { CandyProfileComponent } from './candy-profile.component.ts';
 		path: '/heroes',
 		name: 'Heroes',
 		component: HeroesComponent
+	},
+	{
+		path: '/newcandy',
+		name: 'Newcandy',
+		component: NewCandyComponent
 	}
 ])
 export class AppComponent {

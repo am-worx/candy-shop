@@ -1,8 +1,7 @@
 export class Candy {
 	_id: string;
-	body: string;
-	title: string;
-	author: string;
-	__v: number;
-	created: string;
+	firstName: string;
+	lastName: string;
+	nickname: string;
+	description: string;
 }
