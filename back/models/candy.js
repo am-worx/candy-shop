@@ -13,11 +13,21 @@ schema.statics.edit = function(req, callback) {
 	// validate if current user is owner of this profile
 	var query = { _id: id, author: author };
 
-	var profileUpdate = {}
-	profileUpdate.firstName;
-	profileUpdate.lastName;
-	profileUpdate.nickname;
-	profileUpdate.description;
+	var profileUpdate = {};
+	profileUpdate.firstName = req.param('firstName');
+	profileUpdate.lastName = req.param('lastName');
+	profileUpdate.nickname = req.param('nickname');
+	profileUpdate.description = req.param('description');
+
+	this.update(query, update, function (err, numAffected) {
+		if (err) return callback(err);
+
+		if (0 === numAffected) {
+			return callback(new Error('No CandyProfile to Modify'));
+		}
+
+		callback();
+	})
 };
 
 //Candy = mongoose.model('CandyProfile');

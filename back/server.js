@@ -3,7 +3,8 @@ var http = require('http'),
 	fs = require('fs'),
 	express = require('express'),
 	mongoose = require('mongoose'),
-	net = require('net');
+	net = require('net'),
+	routes = require('./routes');
 
 var rootDir = '/Users/am-worx/Desktop/candy-shop/';
 
@@ -32,6 +33,8 @@ mongoose.connect('mongodb://localhost/m101JS', function (err) {
 		})
 	});
 
+	routes(app);
+
 	app.get('*', function (req, res) {
 		console.log('get any');
 		fs.readFile(rootDir + 'front/index.html', 'utf8', function (err, data) {
@@ -48,8 +51,6 @@ mongoose.connect('mongodb://localhost/m101JS', function (err) {
 	});
 
 	var port = process.env.PORT || 8080;
-
 	app.listen(port);
 	console.log('Running on port', port);
-
 });
