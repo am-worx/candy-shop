@@ -1,8 +1,9 @@
 <h2>Create New Candy Profile</h2>
-<form action="" method="post">
-	<label><input type="text" name="firstName" placeholder="first name"></label><br>
-	<label><input type="text" name="lastName" placeholder="last name"></label><br>
-	<label><input type="text" name="nickname" placeholder="nickname"></label><br>
-	<label><textarea name="description" placeholder="description"></textarea></label><br>
+diagnostic {{diagnostic}}
+<form (ngSubmit)="onSubmit()" #candyForm="ngForm">
+	<label><input [(ngModel)]="model.firstName" type="text" name="firstName" placeholder="first name"></label><br>
+	<label><input [(ngModel)]="model.lastName" type="text" name="lastName" placeholder="last name"></label><br>
+	<label><input [(ngModel)]="model.nickname" type="text" name="nickname" placeholder="nickname" required></label><br>
+	<label><textarea [(ngModel)]="model.description" name="description" placeholder="description"></textarea></label><br>
 	<button type="submit">Create</button>
 </form>

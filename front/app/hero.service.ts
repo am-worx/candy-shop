@@ -1,6 +1,6 @@
 import { Injectable } from 'angular2/core';
 import { Observable } from 'rxjs/Observable';
-import { Http, Response } from 'angular2/http';
+import { Http, Response, Headers } from 'angular2/http';
 import { Hero } from './hero';
 import { Candy } from './candy'
 import { HEROES } from './mock-heroes';
@@ -32,6 +32,18 @@ export class HeroService {
 		return this.http.get(this._candiesUrl)
 			.map(this.extractData)
 			.catch(this.handleError);
+	}
+
+	postNewCandy(hero: string) {
+		var headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+
+		console.log('candy posted', hero);
+		return this.http.post('http://localhost:8080/api/create-new-candy', hero, {headers: headers})
+			.map(res => res.json()).subscribe(
+			data => { console.log(data); },
+			err => { console.log(err); }
+		);
 	}
 
 	private extractData(res: Response) {

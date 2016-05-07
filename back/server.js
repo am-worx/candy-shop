@@ -34,6 +34,10 @@ mongoose.connect('mongodb://localhost/m101JS', function (err) {
 		})
 	});
 
+	app.post('/api/create-new-candy', function (req, res, next) {
+		console.log('new candy post is on the back');
+	});
+
 	routes(app);
 
 	app.get('*', function (req, res) {
