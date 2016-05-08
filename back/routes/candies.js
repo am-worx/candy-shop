@@ -2,8 +2,13 @@
 var mongoose = require('mongoose'),
 		CandyProfile = mongoose.model('CandyProfile');
 
+var bodyParser = require('body-parser');
+
 module.exports = function (app) {
 	// create
+
+	app.use(bodyParser.json()); // support json encoded bodies
+	app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 	app.get('/api/candies', function (req, res, next) {
 		CandyProfile.find()/*.sort('created')*/.limit(10).exec(function (err, posts) {
@@ -14,14 +19,13 @@ module.exports = function (app) {
 	});
 
 	app.post("/api/create-candy-profile", /*loggedIn, */function (req, res, next) {
-		// var body = req.param('body');
-		// var title = req.param('title');
-		// var user = req.session.user;
 
-		var firstName = req.param('firstName'),
-				lastName = req.param('lastName'),
-				nickname = req.param('nickname'),
-				description = req.param('description');
+		var firstName = req.body.firstName,
+				lastName = req.body.lastName,
+				nickname = req.body.nickname,
+				description = req.body.description;
+
+		console.log('creating profile with data', req.body);
 
 		CandyProfile.create({
 			firstName: firstName,
