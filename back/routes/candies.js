@@ -5,13 +5,12 @@ var mongoose = require('mongoose'),
 var bodyParser = require('body-parser');
 
 module.exports = function (app) {
-	// create
-
 	app.use(bodyParser.json()); // support json encoded bodies
 	app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 	app.get('/api/candies', function (req, res, next) {
-		CandyProfile.find()/*.sort('created')*/.limit(10).exec(function (err, posts) {
+		console.log('getting candies');
+		CandyProfile.find().sort('firstName').limit(10).exec(function (err, candies) {
 			if (err) return next(err);
 			res.send(candies);
 			console.log(candies);
