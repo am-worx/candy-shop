@@ -30,7 +30,7 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', './mock-he
             HeroService = (function () {
                 function HeroService(http) {
                     this.http = http;
-                    this._candiesUrl = 'http://localhost:8080/api/posts';
+                    this._candiesUrl = 'http://localhost:8080/api/candies';
                 }
                 HeroService.prototype.getHeroes = function () {
                     return Promise.resolve(mock_heroes_1.HEROES);
@@ -53,7 +53,7 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', './mock-he
                     var headers = new http_1.Headers();
                     headers.append('Content-Type', 'application/json');
                     console.log('candy posted', hero);
-                    return this.http.post('http://localhost:8080/api/create-new-candy', hero, { headers: headers })
+                    return this.http.post('http://localhost:8080/api/create-candy-profile', hero, { headers: headers })
                         .map(function (res) { return res.json(); }).subscribe(function (data) { console.log(data); }, function (err) { console.log(err); });
                 };
                 HeroService.prototype.extractData = function (res) {

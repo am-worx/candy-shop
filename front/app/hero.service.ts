@@ -25,7 +25,7 @@ export class HeroService {
 		);
 	}
 
-	private _candiesUrl = 'http://localhost:8080/api/posts';
+	private _candiesUrl = 'http://localhost:8080/api/candies';
 
 	getCandies (): Observable<Candy[]> {
 		console.log('Candies', this.http.get(this._candiesUrl));
@@ -39,7 +39,7 @@ export class HeroService {
 		headers.append('Content-Type', 'application/json');
 
 		console.log('candy posted', hero);
-		return this.http.post('http://localhost:8080/api/create-new-candy', hero, {headers: headers})
+		return this.http.post('http://localhost:8080/api/create-candy-profile', hero, {headers: headers})
 			.map(res => res.json()).subscribe(
 			data => { console.log(data); },
 			err => { console.log(err); }
