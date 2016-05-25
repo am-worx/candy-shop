@@ -2,11 +2,11 @@ import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 import { HTTP_PROVIDERS } from 'angular2/http';
 
-import { HeroService } from './hero.service';
-import { DashboardComponent } from './dashboard.component';
-import { HeroesComponent } from './heroes.component';
-import { CandyProfileComponent } from './candy-profile.component';
-import { NewCandyComponent } from './new-candy.component';
+import { HeroService } from '../services/hero.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroesComponent } from './candies-list/heroes.component';
+import { CandyProfileComponent } from './candy-profile/candy-profile.component';
+import { NewCandyComponent } from './new-candy/new-candy.component';
 
 @Component({
 	selector: 'my-app',

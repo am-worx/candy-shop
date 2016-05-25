@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './hero.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../../services/hero.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11,7 +11,7 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, hero_service_1;
-    var DashboardComponent;
+    var CandyProfileComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -24,37 +24,31 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
                 hero_service_1 = hero_service_1_1;
             }],
         execute: function() {
-            DashboardComponent = (function () {
-                function DashboardComponent(_router, _heroService) {
-                    this._router = _router;
+            CandyProfileComponent = (function () {
+                function CandyProfileComponent(_heroService, _routeParams) {
                     this._heroService = _heroService;
-                    this.heroes = [];
+                    this._routeParams = _routeParams;
                 }
-                DashboardComponent.prototype.ngOnInit = function () {
+                CandyProfileComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._heroService.getHeroes()
-                        .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
+                    var id = +this._routeParams.get('id');
+                    this._heroService.getHero(id)
+                        .then(function (hero) { return _this.hero = hero; });
                 };
-                DashboardComponent.prototype.gotoDetail = function (hero) {
-                    var link = ['CandyProfile', { id: hero.id }];
-                    this._router.navigate(link);
+                CandyProfileComponent.prototype.goBack = function () {
+                    window.history.back();
                 };
-                DashboardComponent = __decorate([
+                CandyProfileComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-dashboard',
-                        templateUrl: 'app/templates/dashboard.component.html',
+                        selector: 'my-hero-detail',
+                        templateUrl: './candy-profile.component.html',
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
-                ], DashboardComponent);
-                return DashboardComponent;
+                    __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.RouteParams])
+                ], CandyProfileComponent);
+                return CandyProfileComponent;
             }());
-            exports_1("DashboardComponent", DashboardComponent);
+            exports_1("CandyProfileComponent", CandyProfileComponent);
         }
     }
 });
-/*
- Copyright 2016 Google Inc. All Rights Reserved.
- Use of this source code is governed by an MIT-style license that
- can be found in the LICENSE file at http://angular.io/license
- */ 
-//# sourceMappingURL=dashboard.component.js.map
+//# sourceMappingURL=candy-profile.component.js.map

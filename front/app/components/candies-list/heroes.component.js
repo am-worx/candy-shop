@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './candy-profile.component', './hero.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../candy-profile/candy-profile.component', '../../services/hero.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -52,7 +52,7 @@ System.register(['angular2/core', 'angular2/router', './candy-profile.component'
                 HeroesComponent = __decorate([
                     core_1.Component({
                         selector: 'my-heroes',
-                        templateUrl: 'app/templates/heroes.component.html',
+                        templateUrl: './heroes.component.html',
                         //styleUrls:  ['app/heroes.component.css'],
                         directives: [candy_profile_component_1.CandyProfileComponent]
                     }), 

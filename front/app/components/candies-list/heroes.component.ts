@@ -1,14 +1,14 @@
 import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 
-import { Hero } from './hero';
-import {Candy} from './candy';
-import { CandyProfileComponent } from './candy-profile.component';
-import { HeroService } from './hero.service';
+import { Hero } from '../../models/hero';
+import {Candy} from '../../models/candy';
+import { CandyProfileComponent } from '../candy-profile/candy-profile.component';
+import { HeroService } from '../../services/hero.service';
 
 @Component({
 	selector: 'my-heroes',
-	templateUrl: 'app/templates/heroes.component.html',
+	templateUrl: './heroes.component.html',
 	//styleUrls:  ['app/heroes.component.css'],
 	directives: [CandyProfileComponent]
 })
