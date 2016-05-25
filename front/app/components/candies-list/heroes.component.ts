@@ -8,7 +8,7 @@ import { HeroService } from '../../services/hero.service';
 
 @Component({
 	selector: 'my-heroes',
-	templateUrl: './heroes.component.html',
+	templateUrl: './app/components/candies-list/heroes.component.html',
 	//styleUrls:  ['app/heroes.component.css'],
 	directives: [CandyProfileComponent]
 })

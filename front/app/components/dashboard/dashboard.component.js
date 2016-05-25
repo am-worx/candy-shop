@@ -42,7 +42,7 @@ System.register(['angular2/core', 'angular2/router', '../../services/hero.servic
                 DashboardComponent = __decorate([
                     core_1.Component({
                         selector: 'my-dashboard',
-                        templateUrl: './dashboard.component.html',
+                        templateUrl: './app/components/dashboard/dashboard.component.html',
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
                 ], DashboardComponent);

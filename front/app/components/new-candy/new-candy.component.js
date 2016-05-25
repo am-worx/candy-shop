@@ -43,7 +43,7 @@ System.register(['angular2/core', '../../models/candy', '../../services/hero.ser
                 NewCandyComponent = __decorate([
                     core_1.Component({
                         selector: 'new-candy-form',
-                        templateUrl: './new-candy.component.html',
+                        templateUrl: './app/components/new-candy/new-candy.component.html',
                     }), 
                     __metadata('design:paramtypes', [hero_service_1.HeroService])
                 ], NewCandyComponent);

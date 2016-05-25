@@ -52,7 +52,7 @@ System.register(['angular2/core', 'angular2/router', '../candy-profile/candy-pro
                 HeroesComponent = __decorate([
                     core_1.Component({
                         selector: 'my-heroes',
-                        templateUrl: './heroes.component.html',
+                        templateUrl: './app/components/candies-list/heroes.component.html',
                         //styleUrls:  ['app/heroes.component.css'],
                         directives: [candy_profile_component_1.CandyProfileComponent]
                     }), 

@@ -8,7 +8,7 @@ import { HeroService } from '../../services/hero.service';
 
 @Component({
 	selector: 'new-candy-form',
-	templateUrl: './new-candy.component.html',
+	templateUrl: './app/components/new-candy/new-candy.component.html',
 	//styleUrls: ['app/hero-detail.component.css']
 })
 
