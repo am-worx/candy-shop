@@ -1,8 +1,8 @@
 import { Injectable } from 'angular2/core';
 import { Observable } from 'rxjs/Observable';
 import { Http, Response, Headers } from 'angular2/http';
-import { Hero } from './hero';
-import { Candy } from './candy'
+import { Hero } from '../models/hero';
+import { Candy } from '../models/candy'
 import { HEROES } from './mock-heroes';
 
 @Injectable()

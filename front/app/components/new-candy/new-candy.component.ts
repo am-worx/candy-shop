@@ -2,13 +2,13 @@ import { Component } from 'angular2/core';
 import { NgForm } from 'angular2/common';
 import { Http, Response } from 'angular2/http';
 
-import { Candy } from './candy';
-import { HeroService } from './hero.service';
+import { Candy } from '../../models/candy';
+import { HeroService } from '../../services/hero.service';
 
 
 @Component({
 	selector: 'new-candy-form',
-	templateUrl: 'app/templates/new-candy.component.html',
+	templateUrl: './app/components/new-candy/new-candy.component.html',
 	//styleUrls: ['app/hero-detail.component.css']
 })
 
