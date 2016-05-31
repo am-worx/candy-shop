@@ -46,6 +46,17 @@ export class HeroService {
 		);
 	}
 
+	removeCandy(candyId: string) {
+		console.log('Remove Candy', candyId);
+		var headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+		return this.http.post('http://localhost:8080/api/delete-candy-profile', candyId, {headers: headers})
+			.map(res => res.json()).subscribe(
+				data => { console.log(data); },
+				err => { console.log(err); }
+			);
+	}
+
 	private extractData(res: Response) {
 		console.log('Candy Response', res);
 		if (res.status < 200 || res.status >= 300) {

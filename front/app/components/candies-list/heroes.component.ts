@@ -2,7 +2,7 @@ import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 
 import { Hero } from '../../models/hero';
-import {Candy} from '../../models/candy';
+import { Candy } from '../../models/candy';
 import { CandyProfileComponent } from '../candy-profile/candy-profile.component';
 import { HeroService } from '../../services/hero.service';
 
@@ -41,6 +41,15 @@ export class HeroesComponent implements OnInit {
 
 	gotoDetail() {
 		this._router.navigate(['CandyProfile', { id: this.selectedHero.id }]);
+	}
+
+	removeCandy(candy) {
+		console.log('remove Candy', candy._id);
+		/*console.log('Onsubmit', JSON.stringify(this.model));
+		this._heroService.postNewCandy(JSON.stringify(this.model));
+		this.submitted = true;*/
+
+		this._heroService.removeCandy(candy._id);
 	}
 }
 

@@ -49,6 +49,13 @@ System.register(['angular2/core', 'angular2/router', '../candy-profile/candy-pro
                 HeroesComponent.prototype.gotoDetail = function () {
                     this._router.navigate(['CandyProfile', { id: this.selectedHero.id }]);
                 };
+                HeroesComponent.prototype.removeCandy = function (candy) {
+                    console.log('remove Candy', candy._id);
+                    /*console.log('Onsubmit', JSON.stringify(this.model));
+                    this._heroService.postNewCandy(JSON.stringify(this.model));
+                    this.submitted = true;*/
+                    this._heroService.removeCandy(candy._id);
+                };
                 HeroesComponent = __decorate([
                     core_1.Component({
                         selector: 'my-heroes',

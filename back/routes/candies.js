@@ -39,6 +39,30 @@ module.exports = function (app) {
 
 	});
 
+	app.post("/api/delete-candy-profile", /*loggedIn,*/ function (req, res, next) {
+		//var id = req.param('id');
+
+		console.log('Server side deleting candyProfile', req);
+
+		var id = req.body.id;
+
+		CandyProfile.findOne({ _id: id }, function (err, candyProfile) {
+			if (err) return next(err);
+
+			// validate logged in user authored this post
+			/*if (post.author != req.session.user) {
+				return res.send(403);
+			}*/
+
+			candyProfile.remove(function (err) {
+				if (err) return next(err);
+
+				// TODO display a confirmation msg to user
+				res.redirect('/');
+			})
+		})
+	});
+
 
 	/*// read
 	app.get("/api/candy/:id", function (req, res, next) {

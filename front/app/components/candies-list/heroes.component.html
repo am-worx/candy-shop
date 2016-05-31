@@ -15,6 +15,8 @@
 		<span *ngIf="candy.lastName">{{candy.lastName}}</span>
 		<span *ngIf="candy.nickname">{{candy.nickname}}</span>
 		<span *ngIf="candy.description">{{candy.description}}</span>
+		<br>
+		<span (click)="removeCandy(candy)" [style.color]="'red'"> REMOVE </span>
 	</li>
 </ul>
 

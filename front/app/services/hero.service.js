@@ -56,6 +56,13 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', './mock-he
                     return this.http.post('http://localhost:8080/api/create-candy-profile', hero, { headers: headers })
                         .map(function (res) { return res.json(); }).subscribe(function (data) { console.log(data); }, function (err) { console.log(err); });
                 };
+                HeroService.prototype.removeCandy = function (candyId) {
+                    console.log('Remove Candy', candyId);
+                    var headers = new http_1.Headers();
+                    headers.append('Content-Type', 'application/json');
+                    return this.http.post('http://localhost:8080/api/delete-candy-profile', candyId, { headers: headers })
+                        .map(function (res) { return res.json(); }).subscribe(function (data) { console.log(data); }, function (err) { console.log(err); });
+                };
                 HeroService.prototype.extractData = function (res) {
                     console.log('Candy Response', res);
                     if (res.status < 200 || res.status >= 300) {

@@ -7,7 +7,9 @@ var http = require('http'),
 	models = require('./models'),
 	routes = require('./routes');
 
-var rootDir = '/Users/am-worx/Desktop/candy-shop/';
+// var rootDir = '/home/handmade/Desktop/candy-shop/';  //Home
+var rootDir = '/home/handmade/Desktop/candy-shop/';  //Work
+
 
 // define the schema
 var schema = mongoose.Schema({
